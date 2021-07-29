@@ -80,7 +80,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = ioutil.WriteFile("../web/error-code.ts", []byte(tsEnum), 0644)
+	err = ioutil.WriteFile("../web/error-code.d.ts", []byte(tsEnum), 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
