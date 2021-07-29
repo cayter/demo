@@ -10,16 +10,26 @@ func _() {
 	var x [1]struct{}
 	_ = x[ERR_INVALID_PARAM-3000]
 	_ = x[ERR_INVALID_EMAIL-3001]
+	_ = x[ERR_INVALID_USERNAME-4000]
 }
 
-const _ErrorCode_name = "ERR_INVALID_PARAMERR_INVALID_EMAIL"
+const (
+	_ErrorCode_name_0 = "ERR_INVALID_PARAMERR_INVALID_EMAIL"
+	_ErrorCode_name_1 = "ERR_INVALID_USERNAME"
+)
 
-var _ErrorCode_index = [...]uint8{0, 17, 34}
+var (
+	_ErrorCode_index_0 = [...]uint8{0, 17, 34}
+)
 
 func (i ErrorCode) String() string {
-	i -= 3000
-	if i < 0 || i >= ErrorCode(len(_ErrorCode_index)-1) {
-		return "ErrorCode(" + strconv.FormatInt(int64(i+3000), 10) + ")"
+	switch {
+	case 3000 <= i && i <= 3001:
+		i -= 3000
+		return _ErrorCode_name_0[_ErrorCode_index_0[i]:_ErrorCode_index_0[i+1]]
+	case i == 4000:
+		return _ErrorCode_name_1
+	default:
+		return "ErrorCode(" + strconv.FormatInt(int64(i), 10) + ")"
 	}
-	return _ErrorCode_name[_ErrorCode_index[i]:_ErrorCode_index[i+1]]
 }

@@ -1,0 +1,5 @@
+export default {
+  "ERR_INVALID_PARAM": "3000",
+  "ERR_INVALID_EMAIL": "3001",
+  "ERR_INVALID_USERNAME": "4000",
+};

@@ -10,7 +10,7 @@ import (
 
 type AppError struct {
 	Code err.ErrorCode `json:"code,omitempty"`
-	Name string `json:"name,omitempty"`
+	Name string        `json:"name,omitempty"`
 }
 
 func main() {
